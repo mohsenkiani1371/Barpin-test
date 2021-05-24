@@ -55,9 +55,6 @@ function listFilesAndFolders(Array $directory) {
         echo '(Folder is empty)';
     } else {
         foreach ($directory as $key => $fileOrFolderName) {
-            if ($fileOrFolderName === "." || $fileOrFolderName === "..") {
-                continue;
-            }
             $targetPath = $currentPath . "/" . $fileOrFolderName;
             if (is_file($targetPath)) {
                 echo "<a href=$fileOrFolderName>" . $fileOrFolderName . "</a>" . "<br>";
